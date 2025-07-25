@@ -12,15 +12,22 @@ nltk.download('wordnet')
 stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
 
+# Function to preprocess text
+# Tokenizes, removes stopwords, and lemmatizes the text
 def preprocess_text(text):
     tokens = word_tokenize(text.lower())  # Convert to lowercase & tokenize
     tokens = [lemmatizer.lemmatize(word) for word in tokens if word not in stop_words and word.isalnum()]  # Remove stopwords & lemmatize
     return " ".join(tokens)
 
 # Load the model
+# This model is used for calculating semantic similarity between job descriptions and resumes
 model = SentenceTransformer('all-MiniLM-L6-v2')
+
+
 class Similarity:
     
+    # Function to calculate semantic similarity between job description and resume text
+    # Returns a similarity score as a percentage
     def bert_similarity(JD, resume_text):
         # Preprocess text
         JD = preprocess_text(JD)

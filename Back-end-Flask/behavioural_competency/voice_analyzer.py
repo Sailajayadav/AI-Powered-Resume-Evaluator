@@ -1,6 +1,8 @@
 import librosa
 import numpy as np
 
+# Function to analyze audio features from a given audio file
+# Returns a dictionary with pitch, speech rate, and energy variation
 def analyze_audio(audio_path):
     y, sr = librosa.load(audio_path)
 

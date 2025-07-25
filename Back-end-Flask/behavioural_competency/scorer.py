@@ -1,4 +1,7 @@
 from behavioural_competency.face_landmark import check_eye_contact, check_smile
+
+# Function to compute scores based on detected emotions and landmarks
+# Takes a list of detected emotions and landmarks results as input
 def compute_scores(emotions, landmarks_results):
     total = len(emotions)
     happy_ratio = emotions.count('happy') / total

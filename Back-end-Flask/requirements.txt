@@ -1,0 +1,15 @@
+flask
+pymupdf
+bson
+pymongo
+flask_cors
+json
+nltk
+sentence_transformers
+joblib
+warnings
+deepface
+wishper
+moviepy
+librosa
+numpy
